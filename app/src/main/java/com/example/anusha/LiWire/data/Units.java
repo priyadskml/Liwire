@@ -3,9 +3,7 @@ package com.example.anusha.LiWire.data;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by anusha on 12/5/16.
- */
+
 public class Units implements JSONPopulator {
     private String temperature;
 

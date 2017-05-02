@@ -1,8 +1,5 @@
 package com.example.anusha.LiWire.models;
 
-/**
- * Created by VAISHNAVI.S.G on 24-05-2016.
- */
 import java.io.Serializable;
 
 public class RSSFeed implements Serializable {

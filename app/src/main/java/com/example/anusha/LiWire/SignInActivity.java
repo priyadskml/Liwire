@@ -1,5 +1,6 @@
 package com.example.anusha.LiWire;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -83,13 +84,43 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //implement your custom logic here
+        super.onActivityResult(requestCode, resultCode, data);
+        //If signin
+        if (requestCode == RC_SIGN_IN) {
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            //Calling a new function to handle signin
+            handleSignInResult(result);
+        }
     }
 
 
     //After the signing we are calling this function
     private void handleSignInResult(GoogleSignInResult result) {
-        //implement your custom logic here
+        //If the login succeed
+        if (result.isSuccess()) {
+            //Getting google account
+            GoogleSignInAccount acct = result.getSignInAccount();
+
+            //Displaying name and email
+            textViewName.setText(acct.getDisplayName());
+            textViewEmail.setText(acct.getEmail());
+
+            //Initializing image loader
+            imageLoader = CustomVolleyRequest.getInstance(this.getApplicationContext())
+                    .getImageLoader();
+
+            imageLoader.get(acct.getPhotoUrl().toString(),
+                    ImageLoader.getImageListener(profilePhoto,
+                            R.mipmap.ic_launcher,
+                            R.mipmap.ic_launcher));
+
+            //Loading image
+            profilePhoto.setImageUrl(acct.getPhotoUrl().toString(), imageLoader);
+
+        } else {
+            //If login fails
+            Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

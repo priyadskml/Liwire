@@ -1,8 +1,5 @@
 package com.example.anusha.LiWire.fragments;
 
-/**
- * Created by anusha on 13/5/16.
- */
 
 
 import android.content.Intent;

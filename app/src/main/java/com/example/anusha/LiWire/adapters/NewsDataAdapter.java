@@ -1,8 +1,6 @@
 package com.example.anusha.LiWire.adapters;
 
-/**
- * Created by VAISHNAVI.S.G on 24-05-2016.
- */
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;

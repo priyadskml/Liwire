@@ -1,10 +1,13 @@
 package com.example.anusha.LiWire.utils;
 
+
 import android.util.Log;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import android.text.Html;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -31,7 +34,11 @@ public class NewsFeedParser {
     private String tagName;
     private String title;
     private String link;
-   
+    private String description;
+    private String category;
+    private String pubDate;
+    private String guid;
+    private String feedburner;
     private String imageUrl;
 
 
@@ -39,7 +46,11 @@ public class NewsFeedParser {
     public static final String CHANNEL = "channel";
     public static final String TITLE = "title";
     public static final String LINK = "link";
-    
+    public static final String DESCRIPTION = "description";
+    public static final String CATEGORY = "category";
+    public static final String PUBLISHEDDATE = "pubDate";
+    public static final String GUID = "guid";
+    public static final String FEEDBURNERORIGLINK = "feedburner:origLink";
 
 
     public NewsFeedParser(String urlString) {
@@ -86,7 +97,41 @@ public class NewsFeedParser {
                         if (tagName.equals(LINK)) {
                             link = parser.nextText().toString();
                         }
-                        
+                        if (tagName.equals(DESCRIPTION)) {
+                            //String noHtml = Html.fromHtml(description).toString();
+                            description = parser.nextText().toString();
+
+                            description=  URLDecoder.decode(description, "UTF-8");
+
+
+
+                            //  Document doc = Jsoup.parse(description);
+
+                            Document doc = Jsoup.parseBodyFragment(description);
+                            Element body = doc.body();
+                            Elements media = body.select("[src]");
+
+                            for (Element src : media) {
+                                if (src.tagName().equals("img"))
+                                    imageUrl=src.attr("abs:src");
+
+                                //  Log.v("\nNDTV Image Tag", src.tagName() + " " + src.attr("abs:src"));
+
+                            }
+                            Log.v("\nNDTV Description", description);
+                        }
+                        if (tagName.equals(CATEGORY)) {
+                            category = parser.nextText().toString();
+                        }
+                        if (tagName.equals(PUBLISHEDDATE)) {
+                            pubDate = parser.nextText().toString();
+                        }
+                        if (tagName.equals(GUID)) {
+                            guid = parser.nextText().toString();
+                        }
+                        if (tagName.equals(FEEDBURNERORIGLINK)) {
+                            feedburner = parser.nextText().toString();
+                        }
                         break;
                     case XmlPullParser.END_TAG:
                         if (tagName.equals(CHANNEL)) {
@@ -99,6 +144,8 @@ public class NewsFeedParser {
                             rssFeed = new RSSFeed(title, link, noHtml, category, pubDate,
                                     guid,
                                     feedburner, imageUrl);
+
+                            // Log.i("RSSFeedItem", title + " " + link + " " + description + " " + category + " " + pubDate + guid + " " + feedburner);
 
                             rssFeedList.add(rssFeed);
                         }

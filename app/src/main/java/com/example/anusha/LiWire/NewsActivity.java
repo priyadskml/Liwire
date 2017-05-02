@@ -22,24 +22,62 @@ public class NewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+
+/*        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+
+
+        }
+*/
+
+
+
+
+       /* if (savedInstanceState == null) {
+            FragmentTransaction transaction = getSupportFragmentManager()
+                    .beginTransaction();
+            SlidingTabsColorsFragment fragment = new SlidingTabsColorsFragment();
+          //  transaction.addToBackStack(null);
+            transaction.replace(R.id.container, fragment);
+            transaction.commit();
+        }*/
+
         if(savedInstanceState==null){
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             SlidingFragment fragment = new SlidingFragment();
             transaction.replace(R.id.container, fragment);
             transaction.commit();
         }
+
+
+
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //implement your custom logic here
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(NewsActivity.this,MainActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

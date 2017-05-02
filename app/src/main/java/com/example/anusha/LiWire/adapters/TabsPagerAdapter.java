@@ -1,8 +1,6 @@
 package com.example.anusha.LiWire.adapters;
 
-/**
- * Created by VAISHNAVI.S.G on 24-05-2016.
- */
+
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.support.v4.view.PagerAdapter;

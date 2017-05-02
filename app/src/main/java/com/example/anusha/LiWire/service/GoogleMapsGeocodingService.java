@@ -1,8 +1,6 @@
 package com.example.anusha.LiWire.service;
 
-/**
- * Created by anusha on 13/5/16.
- */
+
 import android.location.Location;
 import android.os.AsyncTask;
 

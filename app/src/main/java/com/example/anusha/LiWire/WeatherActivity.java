@@ -2,6 +2,8 @@ package com.example.anusha.LiWire;
 
 
 
+
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -61,7 +63,18 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
         temperatureTextView = (TextView) findViewById(R.id.temperatureTextView);
         conditionTextView = (TextView) findViewById(R.id.conditionTextView);
         locationTextView = (TextView) findViewById(R.id.locationTextView);
-        
+        //back = (Button)findViewById(R.id.back);
+
+        /*back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent nxt = new Intent(getApplicationContext(), profile.class);
+                startActivity(nxt);
+            }
+        });*/
+
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         weatherService = new YahooWeatherService(this);
@@ -101,7 +114,17 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
     }
 
     private void getWeatherFromCurrentLocation() {
-        //implement your custom logic here
+        // system's LocationManager
+        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+        // medium accuracy for weather, good for 100 - 500 meters
+        Criteria locationCriteria = new Criteria();
+        locationCriteria.setAccuracy(Criteria.ACCURACY_MEDIUM);
+
+        String provider = locationManager.getBestProvider(locationCriteria, true);
+
+        // single location update
+        locationManager.requestSingleUpdate(provider, this, null);
     }
 
     @Override
@@ -118,22 +141,63 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //implement your custom logic here
+        switch (item.getItemId()) {
+            case R.id.currentLocation:
+                dialog.show();
+                getWeatherFromCurrentLocation();
+                return true;
+            case R.id.settings:
+                startSettingsActivity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
     public void serviceSuccess(Channel channel) {
-        //implement your custom logic here
+        dialog.hide();
+
+        Condition condition = channel.getItem().getCondition();
+
+        int resourceId = getResources().getIdentifier("drawable/icon_" + condition.getCode(), null, getPackageName());
+
+        @SuppressWarnings("deprecation")
+        Drawable weatherIconDrawable = getResources().getDrawable(resourceId);
+
+        weatherIconImageView.setImageDrawable(weatherIconDrawable);
+
+        String temperatureLabel = getString(R.string.temperature_output, condition.getTemperature(), channel.getUnits().getTemperature());
+
+        temperatureTextView.setText(temperatureLabel);
+        conditionTextView.setText(condition.getDescription());
+        locationTextView.setText(channel.getLocation());
     }
 
     @Override
     public void serviceFailure(Exception exception) {
-        //implement your custom logic here
+        // display error if this is the second failure
+        if (weatherServicesHasFailed) {
+            dialog.hide();
+            Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
+        } else {
+            // error doing reverse geocoding, load weather data from cache
+            weatherServicesHasFailed = true;
+            // OPTIONAL: let the user know an error has occurred then fallback to the cached data
+            Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+
+            cacheService.load(this);
+        }
     }
 
     @Override
     public void geocodeSuccess(LocationResult location) {
-        //implement your custom logic here
+        // completed geocoding successfully
+        weatherService.refreshWeather(location.getAddress());
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(getString(R.string.pref_cached_location), location.getAddress());
+        editor.apply();
     }
 
     @Override

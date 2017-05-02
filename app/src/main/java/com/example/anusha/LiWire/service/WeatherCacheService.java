@@ -7,9 +7,7 @@ import com.example.anusha.LiWire.listener.WeatherServiceListener;
 import com.example.anusha.today.R;
 import com.example.anusha.LiWire.data.Channel;
 
-/**
- * Created by anusha on 12/5/16.
- */
+
 import org.json.JSONObject;
 
 import java.io.FileInputStream;

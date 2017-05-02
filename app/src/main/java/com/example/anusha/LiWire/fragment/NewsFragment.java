@@ -1,8 +1,5 @@
 package com.example.anusha.LiWire.fragment;
 
-/**
- * Created by VAISHNAVI.S.G on 24-05-2016.
- */
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;

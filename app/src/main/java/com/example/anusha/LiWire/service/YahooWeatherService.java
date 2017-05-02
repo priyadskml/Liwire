@@ -14,9 +14,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-/**
- * Created by anusha on 12/5/16.
- */
+
 public class YahooWeatherService {
     private WeatherServiceListener listener;
     private Exception error;
