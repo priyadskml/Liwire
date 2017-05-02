@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "329560793492",
+    "project_id": "today-1e6dd"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329560793492:android:18bab720a03428d8",
+        "android_client_info": {
+          "package_name": "com.example.anusha.today"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329560793492-5skl570fjfn6kp1eqqcffhooafqk6de5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anusha.today",
+            "certificate_hash": "2F0DEB315DEC8124CB4DF5000D011F8BB06D271E"
+          }
+        },
+        {
+          "client_id": "329560793492-k50kj54gfnh0rnfa9bvtuvkbc6g375v8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYW_ph7CCCEd_uO1EBDly5RxzeSaO7MyQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2,
+          "test_banner_ad_unit_id": "ca-app-pub-3940256099942544/6300978111",
+          "test_interstitial_ad_unit_id": "ca-app-pub-3940256099942544/1033173712"
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
