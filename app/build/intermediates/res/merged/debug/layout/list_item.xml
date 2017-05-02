@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.anusha.today.com.example.anusha.LiWire.HashTags"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+
+    <!-- Name Label -->
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingBottom="2dip"
+        android:textColor="#3366BB"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingBottom="2dip"
+        android:textColor="#acacac"
+        android:visibility="gone"/>
+
+
+    <!--<TextView
+        android:id="@+id/promoted_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="left"
+        android:textColor="#5d5d5d"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/query"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="left"
+        android:textColor="#5d5d5d"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tweet_volume"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="left"
+        android:textColor="#5d5d5d"
+        android:textStyle="bold" />!-->
+
+</LinearLayout>
