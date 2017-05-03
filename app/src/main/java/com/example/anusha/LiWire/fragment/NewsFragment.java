@@ -1,5 +1,6 @@
 package com.example.anusha.LiWire.fragment;
 
+
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,9 +24,7 @@ import com.example.anusha.LiWire.models.RSSFeed;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+
 public class NewsFragment extends Fragment {
 
     private RecyclerView mRecyclerView;

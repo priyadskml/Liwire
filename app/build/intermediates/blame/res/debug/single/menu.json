@@ -4,12 +4,32 @@
         "source": "/home/anusha/Downloads/Today/app/src/main/res/menu/menu_web_view.xml"
     },
     {
+        "merged": "/home/anusha/Downloads/LiWire/app/build/intermediates/res/merged/debug/menu/menu_website_actvity.xml",
+        "source": "/home/anusha/Downloads/LiWire/app/src/main/res/menu/menu_website_actvity.xml"
+    },
+    {
+        "merged": "/home/anusha/Downloads/LiWire/app/build/intermediates/res/merged/debug/menu/main_menu.xml",
+        "source": "/home/anusha/Downloads/LiWire/app/src/main/res/menu/main_menu.xml"
+    },
+    {
+        "merged": "/home/anusha/Downloads/LiWire/app/build/intermediates/res/merged/debug/menu/menu.xml",
+        "source": "/home/anusha/Downloads/LiWire/app/src/main/res/menu/menu.xml"
+    },
+    {
+        "merged": "/home/anusha/Downloads/LiWire/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/home/anusha/Downloads/LiWire/app/src/main/res/menu/menu_main.xml"
+    },
+    {
         "merged": "/home/anusha/Downloads/Today/app/build/intermediates/res/merged/debug/menu/main_menu.xml",
         "source": "/home/anusha/Downloads/Today/app/src/main/res/menu/main_menu.xml"
     },
     {
         "merged": "/home/anusha/Downloads/Today/app/build/intermediates/res/merged/debug/menu/menu_website_actvity.xml",
         "source": "/home/anusha/Downloads/Today/app/src/main/res/menu/menu_website_actvity.xml"
+    },
+    {
+        "merged": "/home/anusha/Downloads/LiWire/app/build/intermediates/res/merged/debug/menu/menu_web_view.xml",
+        "source": "/home/anusha/Downloads/LiWire/app/src/main/res/menu/menu_web_view.xml"
     },
     {
         "merged": "/home/anusha/Downloads/Today/app/build/intermediates/res/merged/debug/menu/menu_main.xml",

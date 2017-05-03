@@ -1,8 +1,6 @@
 package com.example.anusha.LiWire.fragment;
 
-/**
- * Created by VAISHNAVI.S.G on 24-05-2016.
- */
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

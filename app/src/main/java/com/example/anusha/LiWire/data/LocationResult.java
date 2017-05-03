@@ -1,8 +1,6 @@
 package com.example.anusha.LiWire.data;
 
-/**
- * Created by anusha on 13/5/16.
- */
+
 
 import org.json.JSONException;
 import org.json.JSONObject;

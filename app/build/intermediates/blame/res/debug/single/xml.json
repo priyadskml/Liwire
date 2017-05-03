@@ -2,5 +2,9 @@
     {
         "merged": "/home/anusha/Downloads/Today/app/build/intermediates/res/merged/debug/xml/app_preferences.xml",
         "source": "/home/anusha/Downloads/Today/app/src/main/res/xml/app_preferences.xml"
+    },
+    {
+        "merged": "/home/anusha/Downloads/LiWire/app/build/intermediates/res/merged/debug/xml/app_preferences.xml",
+        "source": "/home/anusha/Downloads/LiWire/app/src/main/res/xml/app_preferences.xml"
     }
 ]

@@ -3,6 +3,7 @@ package com.example.anusha.LiWire.data;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class Condition implements JSONPopulator {
 
     private int code;

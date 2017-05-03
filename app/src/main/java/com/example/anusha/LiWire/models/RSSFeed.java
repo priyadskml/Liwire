@@ -1,5 +1,6 @@
 package com.example.anusha.LiWire.models;
 
+
 import java.io.Serializable;
 
 public class RSSFeed implements Serializable {

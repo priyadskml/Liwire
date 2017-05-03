@@ -1,6 +1,5 @@
 package com.example.anusha.LiWire.service;
 
-
 import android.location.Location;
 import android.os.AsyncTask;
 

@@ -2,5 +2,9 @@
     {
         "merged": "/home/anusha/Downloads/Today/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/home/anusha/Downloads/Today/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/home/anusha/Downloads/LiWire/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/home/anusha/Downloads/LiWire/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     }
 ]
